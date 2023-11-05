@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Poppins:wght@300;400;500;600&display=swap');
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-image: url(/static/background.jpeg); 
+    font-family: 'Poppins', sans-serif;
+
+
+}
+
+div {
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    font-size: 3.5rem;
+    display: grid;
+    color: rgb(204, 195, 253);
+    border: white;
+
+}
+
+form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#user-input {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 200px;
+    border-radius: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+#btn {
+    margin-top: 30px;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    background-color:rgb(204, 195, 253);
+    border-radius: 20px;
+    width: 130px;
+
+}
+
+#btn:hover{
+    background-color: rebeccapurple;
+}
