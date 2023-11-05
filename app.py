@@ -3,6 +3,7 @@ import subprocess
 
 app = Flask(__name__)
 
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
@@ -17,7 +18,8 @@ def get_stock_info(ticker):
         f"calculate_SMA {ticker} 20",
         f"calculate_EMA {ticker} 20",
         f"calculate_RSI {ticker}",
-        f"calculate_MACD {ticker}"
+        f"calculate_MACD {ticker}",
+        f"plot_stock_price {ticker}",
     ]
     results = []
 
@@ -27,6 +29,8 @@ def get_stock_info(ticker):
         results.append(output)
 
     return results
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)

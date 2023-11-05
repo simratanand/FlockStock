@@ -25,12 +25,11 @@ body {
   /* Use CSS Grid for arranging articles */
   .info-container {
     display: grid;
-    row-gap: 20px;
-    grid-template-columns: auto auto auto;
-    gap: 40px;
-    
-    
-  }
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); /* Adjust the width of each article */
+    gap: 20px; /* Reduce the gap between articles */
+    max-width: 1200px; /* Limit the maximum width of the articles container */
+    margin: 0 auto; /* Center-align the articles container */
+}
   
   /* Style the articles */
   article {

@@ -3,6 +3,7 @@ import re
 import openai
 import yfinance as yf
 import matplotlib.pyplot as plt
+import os
 
 openai.api_key = open('api_key', 'r').read()
 
@@ -35,6 +36,21 @@ def calculate_MACD(ticker):
     signal = MACD.ewm(span=9, adjust=False).mean()
     MACD_histogram = MACD - signal
     return f'{MACD.iloc[-1]}, {signal.iloc[-1]}, {MACD_histogram.iloc[-1]}'
+
+def plot_stock_price(ticker):
+    data = yf.Ticker(ticker).history(period='1y')[['Close']]
+    data.reset_index(inplace=True)  # Reset the index to make 'Date' a column
+    plt.figure(figsize=(10, 5))
+    plt.plot(data['Date'], data['Close'])
+    plt.title(f'{ticker} Stock Price Over Last Year')
+    plt.xlabel('Date')
+    plt.ylabel('Stock Price ($)')
+    plt.grid(True)
+    image_path = os.path.join("static", "stock.png")
+    plt.savefig(image_path)
+    plt.close()
+    return image_path
+
 
 
 def main():
@@ -82,6 +98,13 @@ def main():
                 ticker = parts[1]
                 result = calculate_MACD(ticker)
                 print(result)
+
+        elif user_input.startswith('plot_stock_price'):
+            parts = user_input.split(' ')
+            if len(parts) == 2:
+                ticker = parts[1]
+                plot_stock_price(ticker)
+                plt.savefig('stock.png')
             else:
                 print("Invalid input. Usage: calculate_MACD <ticker>")
         else:

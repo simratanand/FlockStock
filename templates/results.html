@@ -12,7 +12,7 @@
     <div class="info-container">
         <article>
             <h4>Current Stock Price</h4>
-            <h6>Live stock price</h6>
+            <h6>Live stock price ($)</h6>
             <p>{{ results[0] }}</p>
         </article>
 
@@ -26,7 +26,7 @@
     <div class="info-container">
         <article>
             <h4>EMA with a 20 window</h4>
-            <h6> 20-day EMA with a 20 window</h6>
+            <h6> 20-day Exponential Moving Average</h6>
             <p>{{ results[2] }}</p>
         </article>
 
@@ -42,6 +42,11 @@
             <h4>MACD</h4>
             <h6>Moving Average Convergence Divergence</h6>
             <p>{{ results[4] }}</p>
+        </article>
+        <article>
+            <h4>Plot graph</h4>
+            <h6>The graph of stock in the past year</h6>
+            <img src="{{ url_for('static', filename='stock.png') }}" alt="Stock Price Plot" width="300" height="210">
         </article>
     </div>
 </body>
