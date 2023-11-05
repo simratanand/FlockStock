@@ -54,6 +54,9 @@ This project is licensed under the MIT License - see the LICENSE.md file for det
 
 ## Author ✍️
 Ally Guo
+Mikayla Mao
+Rita Xiang
+
 
 ## Other information ℹ️
 The Project is still under development. Some features are not completed and the code might have some errors. Please use it at your own risk!
